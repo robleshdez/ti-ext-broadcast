@@ -55,6 +55,7 @@ class BroadcastActivityCreated implements ShouldBroadcast
      */
     public function broadcastWith()
     {
+        $this->activity->class_name = "Igniter\Cart\ActivityTypes\OrderCreated";
         return array_merge($this->activity->toArray(), [
             'id' => $this->activity->activity_id,
             'type' => $this->activity->type,
